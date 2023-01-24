@@ -67,7 +67,6 @@ def greedyNonGreedy():
     mo2 = nonGreddy.search('HaHaHaHaHa')
     print(mo2.group())
 
-greedyNonGreedy()
 '''
     While search() will return a match object of the first matched text
     finall() will return the string of every match
@@ -189,4 +188,15 @@ def nakamoto():
     nakamotoRegex = re.compile(r'^[A-Z][a-z]+ Nakamoto')
     mo = nakamotoRegex.findall(input())
     print(mo)
-nakamoto()
+
+def oneName():
+    nameRegex = re.compile(r'(?:Alice|Bob|Carol)\s(?:eats|pets|throws) \s (?:apples|cats|balls)\.', re.IGNORECASE)
+    mo = (nameRegex.search("alice eats balls."))
+    print(mo.groups())
+
+
+def pw():
+    pwRegex = re.compile(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$')
+    mo = pwRegex.findall("muySDFP2331")
+    print(mo)
+pw()
