@@ -20,7 +20,7 @@ capitals = {
     'Wisconsin': 'Madison', 'Wyoming': 'Cheyenne'
 }
 capitalsItems = list(capitals.items())
-
+states = list(capitals.keys())
 #Generate 35 quiz files.
 for q in range(35):
     #Create the quiz and answer key files.
@@ -33,7 +33,6 @@ for q in range(35):
     qFile.write('\n\n')
 
     #Shuffle the order of the states.
-    states = list(capitals.keys())
     random.shuffle(states)
 
     for i in range(50):
@@ -46,7 +45,7 @@ for q in range(35):
         random.shuffle(answerOptions)
 
         #Write the questionand answer options to the file
-        qFile.write('%s. What is the capital of %s?\n' % (i+1, states[i]))
+        qFile.write('%s. What is the capital of %s?\n\n' % (i+1, states[i]))
         for a in range(4):
             qFile.write('   %s. %s\n' % ('ABCD'[a], answerOptions[a]))
             qFile.write('\n')
